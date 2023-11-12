@@ -9,18 +9,21 @@ import {
 } from '@nestjs/websockets';
 import { Server, Socket } from 'socket.io';
 
-@WebSocketGateway({ path: '/chat' })
+@WebSocketGateway({ path: '/chat', transports: ['websocket'] })
 export class WebsocketsGateway
   implements OnGatewayConnection, OnGatewayDisconnect
 {
   @WebSocketServer()
   server: Server;
+  client: any;
 
-  handleConnection(client: Socket, ...args: any[]) {
+  handleConnection(client: any): void {
+    this.client = client;
     console.log(`Client connected: ${client.id}`);
   }
 
-  handleDisconnect(client: Socket) {
+  handleDisconnect(client: any): void {
+    this.client = null;
     console.log(`Client disconnected: ${client.id}`);
   }
 
