@@ -1,0 +1,30 @@
+[
+  {
+    "id": "Master",
+    "pw": "master",
+    "dungeonClear": 1,
+    "level": 2,
+    "exp": 0,
+    "job": 5,
+    "damage": 10,
+    "itemDamage": 2,
+    "defence": 5,
+    "itemDefence": 20,
+    "hp": 100,
+    "gold": 8200,
+    "inventory": {
+      "무쇠갑옷": {
+        "toOwn": true,
+        "equipment": false
+      },
+      "낡은 검": {
+        "toOwn": true,
+        "equipment": true
+      },
+      "스파르타의 갑옷": {
+        "toOwn": true,
+        "equipment": true
+      }
+    }
+  }
+]
